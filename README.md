@@ -17,8 +17,8 @@
 - virtual box + vagrant + Ubuntu 16.04
 - Quartus Prime 18.0 Lite Edition
 
-環境構築については、[https://qiita.com/kawasin73/items/f89aba6bc1dee39c3863][https://qiita.com/kawasin73/items/f89aba6bc1dee39c3863]を参考にしました。
-quartusを入れましたが、Modelsim実行時にvlibが見つからないというエラーが出たので、[https://forums.intel.com/s/question/0D50P00003yyTcCSAU/execution-of-vlib-failed-ubuntu-1604?language=en_US][https://forums.intel.com/s/question/0D50P00003yyTcCSAU/execution-of-vlib-failed-ubuntu-1604?language=en_US]を参考にして、シンボリックリンクを貼ったら動作しました。
+環境構築については、[https://qiita.com/kawasin73/items/f89aba6bc1dee39c3863] を参考にしました。
+quartusを入れましたが、Modelsim実行時にvlibが見つからないというエラーが出たので、[https://forums.intel.com/s/question/0D50P00003yyTcCSAU/execution-of-vlib-failed-ubuntu-1604?language=en_US] を参考にして、シンボリックリンクを貼ったら動作しました。
 
 ## 実装
 priority encoder と barrel shifter を用いて偶数を全てスキップしています.
