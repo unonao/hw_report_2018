@@ -14,13 +14,51 @@
 
 ## 環境
 - macbook pro
-- virtual box + vagrant + Ubuntu 16.04
+-　Virtual box + Vagrant + Ubuntu 16.04
 - Quartus Prime 18.0 Lite Edition
 
-環境構築については、[https://qiita.com/kawasin73/items/f89aba6bc1dee39c3863] を参考にしました。
+### 環境構築時の注意
+環境構築については、紆余曲折を経て最終的には[https://qiita.com/kawasin73/items/f89aba6bc1dee39c3863] を参考にしました。
+
 quartusを入れましたが、Modelsim実行時にvlibが見つからないというエラーが出たので、[https://forums.intel.com/s/question/0D50P00003yyTcCSAU/execution-of-vlib-failed-ubuntu-1604?language=en_US] を参考にして、シンボリックリンクを貼ったら動作しました。
 
-## 実装
-priority encoder と barrel shifter を用いて偶数を全てスキップしています.
-RAMを用いて、既に調査した登り口に対する最高峰の高さと行程の長さを記憶しておくことで再計算を防ぎます.
-RAMを2-port RAMにすることで、ルートの最高峰の計算を2つ平行して行います。
+### Quartusのメリット
+- macユーザーはインストールに手間取るのでキレそうになりますが、使ってみると高機能で涙が出ます。vhdlを回路図にできるし、逆に回路図をvhdlに変換できます。
+- コンパイルするとエレメント数が確認できます。この結果を提出したほうが良さそう。
+- よく使う回路はパラメータをいくつか設定すればQuartusで生成できる。今回のRAMもQuartusで作成可。
+- まだまだ色々ありそう。
+
+## 教授から聞いた話
+- 基本的にQuartusでコンパイルしてエレメント数が出れば、実装可能と考えて良い
+- 何も考えないで2万クロックくらい
+- 頑張って高速化して2000クロックくらい？
+- 数百クロックは無理(実装不可）
+- レジスタ1000個とかはなるべくやめてほしい...？
+
+## 実装方法
+- RAMを用いて、既に調査した登り口に対する最高峰の高さと行程の長さを記憶しておくことで再計算を防ぎます.
+- RAMを2-port RAMにすることで、最高峰の計算を2つ平行して行います。
+- あるルートのcollazs数を求めるときはpriority encoder と barrel shifter を用いて偶数を全てスキップします。
+- 偶数ルートの計算や結果の保存は行いません。top4に511以下の数xがあれば、かわりに2xを答えにすればよいです。
+
+## ファイル
+レポジトリに含まれるファイルについて説明します（作成途中）
+
+### ソースコード
+- collatz.vhd :
+  トップレベルのコードです。入力(clk)を受け取り、ram_wrap, pending, climb*2, controller, count_clk, sorterを結びつけ、答えをモジュール化したインスタンスから受け取って出力します。
+- controller.vhd :
+  全体の制御を行うファイルです。沢山の入力と出力がありますが、細かい条件分岐などの役割を担います。処理が終了したらall_doneフラグを立てます。
+- climb.vhd :
+  入力したルートのcollazs数を求めるファイルです。プライオリティ・エンコーダーとバレルシフタを使うことで偶数を全てスキップします。また、RAMを確認することにより再計算を防ぎます。
+- count_clk.vhd :
+  all_doneフラグが立って終了するまで、クロック数をカウントします。
+- sorter.vhd :
+  climbの結果を受け取って、最高峰の値を使ってソートし、top4を保持しておきます。
+- ram_wrap.vhd :
+  Quartus生成の2-port RAMを制御します。
+ 
+### Quartus関係
+- print.pdf:
+  トップレベルのソースコードを使って作成した回路図のpdfです。
+
