@@ -1,0 +1,502 @@
+Analysis & Synthesis report for collazs
+Thu Jan 10 08:17:06 2019
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "pending:b2v_pending_inst"
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Jan 10 08:17:06 2019       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                   ; collazs                                     ;
+; Top-level Entity Name           ; collazs                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 177                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; collazs            ; collazs            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path           ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------+---------+
+; types.vhd                        ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/types.vhd      ;         ;
+; sort.vhd                       ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/sort.vhd     ;         ;
+; ram_wrap.vhd                     ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/ram_wrap.vhd   ;         ;
+; pending.vhd                      ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/pending.vhd    ;         ;
+; count_clk.vhd                    ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/count_clk.vhd  ;         ;
+; control.vhd                   ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/control.vhd ;         ;
+; collazs.vhd                      ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/collazs.vhd    ;         ;
+; climb.vhd                        ; yes             ; User VHDL File  ; /vagrant/hw_report_2018/climb.vhd      ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 177   ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 177   ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |collazs                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 177  ; 0            ; |collazs            ; collazs     ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pending:b2v_pending_inst"                                                                    ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; all_pend_done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 177                         ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Jan 10 08:16:37 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off collazs -c collazs
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 0 entities, in source file types.vhd
+    Info (12022): Found design unit 1: types File: /vagrant/hw_report_2018/types.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file sort.vhd
+    Info (12022): Found design unit 1: sort-sort_architecture File: /vagrant/hw_report_2018/sort.vhd Line: 24
+    Info (12023): Found entity 1: sort File: /vagrant/hw_report_2018/sort.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file ram_wrap.vhd
+    Info (12022): Found design unit 1: ram_wrap-ram_wrap_architecture File: /vagrant/hw_report_2018/ram_wrap.vhd Line: 30
+    Info (12023): Found entity 1: ram_wrap File: /vagrant/hw_report_2018/ram_wrap.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file pending.vhd
+    Info (12022): Found design unit 1: pending-pending_architecture File: /vagrant/hw_report_2018/pending.vhd Line: 36
+    Info (12023): Found entity 1: pending File: /vagrant/hw_report_2018/pending.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file count_clk.vhd
+    Info (12022): Found design unit 1: count_clk-count_clk_architecture File: /vagrant/hw_report_2018/count_clk.vhd Line: 24
+    Info (12023): Found entity 1: count_clk File: /vagrant/hw_report_2018/count_clk.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-control_architecture File: /vagrant/hw_report_2018/control.vhd Line: 55
+    Info (12023): Found entity 1: control File: /vagrant/hw_report_2018/control.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file collazs.vhd
+    Info (12022): Found design unit 1: collazs-bdf_type File: /vagrant/hw_report_2018/collazs.vhd Line: 20
+    Info (12023): Found entity 1: collazs File: /vagrant/hw_report_2018/collazs.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file climb.vhd
+    Info (12022): Found design unit 1: climb-climb_architecture File: /vagrant/hw_report_2018/climb.vhd Line: 27
+    Info (12023): Found entity 1: climb File: /vagrant/hw_report_2018/climb.vhd Line: 9
+Info (12127): Elaborating entity "collazs" for the top level hierarchy
+Info (12128): Elaborating entity "climb" for hierarchy "climb:b2v_climb_a" File: /vagrant/hw_report_2018/collazs.vhd Line: 174
+Info (12128): Elaborating entity "control" for hierarchy "control:b2v_control_inst" File: /vagrant/hw_report_2018/collazs.vhd Line: 198
+Warning (10541): VHDL Signal Declaration warning at control.vhd(47): used implicit default value for signal "go_a" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /vagrant/hw_report_2018/control.vhd Line: 47
+Warning (10541): VHDL Signal Declaration warning at control.vhd(48): used implicit default value for signal "go_b" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /vagrant/hw_report_2018/control.vhd Line: 48
+Info (12128): Elaborating entity "count_clk" for hierarchy "count_clk:b2v_count_clk_inst" File: /vagrant/hw_report_2018/collazs.vhd Line: 240
+Info (12128): Elaborating entity "pending" for hierarchy "pending:b2v_pending_inst" File: /vagrant/hw_report_2018/collazs.vhd Line: 246
+Info (12128): Elaborating entity "ram_wrap" for hierarchy "ram_wrap:b2v_ram_wrap_inst" File: /vagrant/hw_report_2018/collazs.vhd Line: 266
+Info (12128): Elaborating entity "sort" for hierarchy "sort:b2v_sort_inst" File: /vagrant/hw_report_2018/collazs.vhd Line: 280
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "clk_count[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[10]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[11]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[12]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[13]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[14]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[15]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[16]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[17]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[18]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[19]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[20]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[21]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[22]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[23]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[24]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[25]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[26]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[27]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[28]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[29]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[30]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "clk_count[31]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 15
+    Warning (13410): Pin "top4[3].len[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].len[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[10]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[11]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[12]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[13]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[14]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[15]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[16]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].peak[17]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[3].root[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].len[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[10]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[11]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[12]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[13]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[14]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[15]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[16]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].peak[17]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[2].root[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].len[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[10]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[11]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[12]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[13]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[14]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[15]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[16]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].peak[17]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[1].root[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].len[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[10]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[11]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[12]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[13]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[14]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[15]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[16]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].peak[17]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[0]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[1]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[2]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[3]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[4]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[5]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[6]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[7]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[8]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+    Warning (13410): Pin "top4[0].root[9]" is stuck at GND File: /vagrant/hw_report_2018/collazs.vhd Line: 16
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /vagrant/hw_report_2018/collazs.vhd Line: 14
+Info (21057): Implemented 177 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 176 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 182 warnings
+    Info: Peak virtual memory: 1022 megabytes
+    Info: Processing ended: Thu Jan 10 08:17:06 2019
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:31
+
+
