@@ -89,21 +89,21 @@ top4(root, peak, len)
 
 | Fmax      | Restricted Fmax | Clock Name | Note |
 |-----------|-----------------|------------|------|
-| 16.81 MHz | 16.81 MHz       | clk        |      |
+| 25.81 MHz |  25.81 MHz        | clk        |      |
 
 ### エレメント使用率
 
 |Flow Summary                     |                                             |
 |---------------------------------|---------------------------------------------|
-| Flow Status                     | Successful - Sun Jan 13 17:27:28 2019       |
+| Flow Status                     | Successful - Tue Jan 15 06:31:52 2019       |
 | Quartus Prime Version           | 18.0.0 Build 614 04/24/2018 SJ Lite Edition |
 | Revision Name                   | collatz                                     |
 | Top-level Entity Name           | collatz                                     |
 | Family                          | Cyclone V                                   |
 | Device                          | 5CGXFC7C7F23C8                              |
 | Timing Models                   | Final                                       |
-| Logic utilization (in ALMs)     | 1,628 / 56,480 ( 3 % )                      |
-| Total registers                 | 845                                         |
+| Logic utilization (in ALMs)     | 1,276 / 56,480 ( 2 % )                      |
+| Total registers                 | 852                                         |
 | Total pins                      | 177 / 268 ( 66 % )                          |
 | Total virtual pins              | 0                                           |
 | Total block memory bits         | 13,824 / 7,024,640 ( < 1 % )                |

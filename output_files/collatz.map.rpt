@@ -1,5 +1,5 @@
 Analysis & Synthesis report for collatz
-Sun Jan 13 17:20:39 2019
+Tue Jan 15 06:25:12 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jan 13 17:20:39 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jan 15 06:25:11 2019       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; collatz                                     ;
 ; Top-level Entity Name           ; collatz                                     ;
@@ -205,14 +205,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1729      ;
+; Estimate of Logic utilization (ALMs needed) ; 1340      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2524      ;
+; Combinational ALUT usage for logic          ; 1931      ;
 ;     -- 7 input functions                    ; 17        ;
-;     -- 6 input functions                    ; 813       ;
-;     -- 5 input functions                    ; 472       ;
-;     -- 4 input functions                    ; 374       ;
-;     -- <=3 input functions                  ; 848       ;
+;     -- 6 input functions                    ; 628       ;
+;     -- 5 input functions                    ; 327       ;
+;     -- 4 input functions                    ; 312       ;
+;     -- <=3 input functions                  ; 647       ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 766       ;
 ;                                             ;           ;
@@ -224,8 +224,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 793       ;
-; Total fan-out                               ; 14657     ;
-; Average fan-out                             ; 3.99      ;
+; Total fan-out                               ; 11993     ;
+; Average fan-out                             ; 3.90      ;
 +---------------------------------------------+-----------+
 
 
@@ -234,9 +234,9 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |collatz                                     ; 2524 (0)            ; 766 (0)                   ; 13824             ; 0          ; 177  ; 0            ; |collatz                                                                                                                  ; collatz         ; work         ;
-;    |climb:climb_a|                           ; 266 (266)           ; 90 (90)                   ; 0                 ; 0          ; 0    ; 0            ; |collatz|climb:climb_a                                                                                                    ; climb           ; work         ;
-;    |climb:climb_b|                           ; 265 (265)           ; 90 (90)                   ; 0                 ; 0          ; 0    ; 0            ; |collatz|climb:climb_b                                                                                                    ; climb           ; work         ;
+; |collatz                                     ; 1931 (0)            ; 766 (0)                   ; 13824             ; 0          ; 177  ; 0            ; |collatz                                                                                                                  ; collatz         ; work         ;
+;    |climb:climb_a|                           ; 268 (268)           ; 90 (90)                   ; 0                 ; 0          ; 0    ; 0            ; |collatz|climb:climb_a                                                                                                    ; climb           ; work         ;
+;    |climb:climb_b|                           ; 267 (267)           ; 90 (90)                   ; 0                 ; 0          ; 0    ; 0            ; |collatz|climb:climb_b                                                                                                    ; climb           ; work         ;
 ;    |control:control_inst|                    ; 137 (137)           ; 147 (147)                 ; 0                 ; 0          ; 0    ; 0            ; |collatz|control:control_inst                                                                                             ; control         ; work         ;
 ;    |count_clk:count_clk_inst|                ; 32 (32)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |collatz|count_clk:count_clk_inst                                                                                         ; count_clk       ; work         ;
 ;    |pending:pending_inst|                    ; 107 (107)           ; 263 (263)                 ; 0                 ; 0          ; 0    ; 0            ; |collatz|pending:pending_inst                                                                                             ; pending         ; work         ;
@@ -244,7 +244,7 @@ refer to the applicable agreement for further details.
 ;       |ram_2_port:ram_2_port_inst|           ; 0 (0)               ; 0 (0)                     ; 13824             ; 0          ; 0    ; 0            ; |collatz|ram_wrap:ram_wrap_inst|ram_2_port:ram_2_port_inst                                                                ; ram_2_port      ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 13824             ; 0          ; 0    ; 0            ; |collatz|ram_wrap:ram_wrap_inst|ram_2_port:ram_2_port_inst|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_b314:auto_generated| ; 0 (0)               ; 0 (0)                     ; 13824             ; 0          ; 0    ; 0            ; |collatz|ram_wrap:ram_wrap_inst|ram_2_port:ram_2_port_inst|altsyncram:altsyncram_component|altsyncram_b314:auto_generated ; altsyncram_b314 ; work         ;
-;    |sort:sort_inst|                          ; 1717 (1717)         ; 144 (144)                 ; 0                 ; 0          ; 0    ; 0            ; |collatz|sort:sort_inst                                                                                                   ; sort            ; work         ;
+;    |sort:sort_inst|                          ; 1120 (1120)         ; 144 (144)                 ; 0                 ; 0          ; 0    ; 0            ; |collatz|sort:sort_inst                                                                                                   ; sort            ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -296,8 +296,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; control:control_inst|root_b_reg[6]      ; 5       ;
 ; control:control_inst|root_b_reg[7]      ; 5       ;
 ; control:control_inst|root_b_reg[8]      ; 5       ;
-; control:control_inst|go_a_reg           ; 34      ;
-; control:control_inst|go_b_reg           ; 34      ;
+; control:control_inst|go_b_reg           ; 33      ;
+; control:control_inst|go_a_reg           ; 33      ;
 ; Total number of inverted registers = 11 ;         ;
 +-----------------------------------------+---------+
 
@@ -307,18 +307,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |collatz|control:control_inst|sort_data_a_var.root[2]  ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |collatz|control:control_inst|sort_data_b_var.len[0]   ;
-; 3:1                ; 44 bits   ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |collatz|control:control_inst|pend_root_in_reg[4]      ;
-; 3:1                ; 45 bits   ; 90 LEs        ; 0 LEs                ; 90 LEs                 ; Yes        ; |collatz|pending:pending_inst|pending_list[1].peak[2]  ;
-; 3:1                ; 45 bits   ; 90 LEs        ; 0 LEs                ; 90 LEs                 ; Yes        ; |collatz|pending:pending_inst|pending_list[2].len[3]   ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |collatz|pending:pending_inst|pend_addr_out_a_reg[5]   ;
-; 4:1                ; 45 bits   ; 90 LEs        ; 90 LEs               ; 0 LEs                  ; Yes        ; |collatz|pending:pending_inst|pend_addr_out_b_reg[2]   ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |collatz|control:control_inst|sort_data_b_var.peak[11] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |collatz|climb:climb_a|len_var[6]                      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |collatz|climb:climb_b|len_var[2]                      ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |collatz|control:control_inst|sort_data_a_var.root[1]  ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |collatz|control:control_inst|sort_data_b_var.len[4]   ;
+; 3:1                ; 44 bits   ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |collatz|control:control_inst|pend_root_in_reg[9]      ;
+; 3:1                ; 45 bits   ; 90 LEs        ; 0 LEs                ; 90 LEs                 ; Yes        ; |collatz|pending:pending_inst|pending_list[1].root[8]  ;
+; 3:1                ; 45 bits   ; 90 LEs        ; 0 LEs                ; 90 LEs                 ; Yes        ; |collatz|pending:pending_inst|pending_list[2].len[2]   ;
+; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |collatz|pending:pending_inst|pend_len_out_a_reg[6]    ;
+; 4:1                ; 45 bits   ; 90 LEs        ; 90 LEs               ; 0 LEs                  ; Yes        ; |collatz|pending:pending_inst|pend_addr_out_b_reg[3]   ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |collatz|control:control_inst|sort_data_b_var.peak[15] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |collatz|climb:climb_a|len_var[0]                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |collatz|climb:climb_b|len_var[7]                      ;
 ; 5:1                ; 18 bits   ; 54 LEs        ; 36 LEs               ; 18 LEs                 ; Yes        ; |collatz|climb:climb_a|peak_var[0]                     ;
-; 5:1                ; 18 bits   ; 54 LEs        ; 36 LEs               ; 18 LEs                 ; Yes        ; |collatz|climb:climb_b|peak_var[1]                     ;
+; 5:1                ; 18 bits   ; 54 LEs        ; 36 LEs               ; 18 LEs                 ; Yes        ; |collatz|climb:climb_b|peak_var[16]                    ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |collatz|sort:sort_inst|chains                         ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |collatz|sort:sort_inst|chains                         ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |collatz|sort:sort_inst|chains                         ;
@@ -446,25 +446,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 2                           ;
 ;     SLD               ; 144                         ;
 ;     plain             ; 138                         ;
-; arriav_lcell_comb     ; 2524                        ;
+; arriav_lcell_comb     ; 1931                        ;
 ;     arith             ; 180                         ;
 ;         1 data inputs ; 84                          ;
 ;         2 data inputs ; 70                          ;
 ;         4 data inputs ; 26                          ;
 ;     extend            ; 17                          ;
 ;         7 data inputs ; 17                          ;
-;     normal            ; 2327                        ;
+;     normal            ; 1734                        ;
 ;         1 data inputs ; 22                          ;
-;         2 data inputs ; 138                         ;
-;         3 data inputs ; 534                         ;
-;         4 data inputs ; 348                         ;
-;         5 data inputs ; 472                         ;
-;         6 data inputs ; 813                         ;
+;         2 data inputs ; 116                         ;
+;         3 data inputs ; 355                         ;
+;         4 data inputs ; 286                         ;
+;         5 data inputs ; 327                         ;
+;         6 data inputs ; 628                         ;
 ; boundary_port         ; 177                         ;
 ; stratixv_ram_block    ; 27                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 52.00                       ;
-; Average LUT depth     ; 26.49                       ;
+; Max LUT depth         ; 34.00                       ;
+; Average LUT depth     ; 16.15                       ;
 +-----------------------+-----------------------------+
 
 
@@ -473,7 +473,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:30     ;
+; Top            ; 00:00:22     ;
 +----------------+--------------+
 
 
@@ -483,7 +483,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Jan 13 17:19:43 2019
+    Info: Processing started: Tue Jan 15 06:24:09 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off collatz -c collatz
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -588,15 +588,15 @@ Info (12128): Elaborating entity "sort" for hierarchy "sort:sort_inst" File: /va
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3283 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2690 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 176 output pins
-    Info (21061): Implemented 3079 logic cells
+    Info (21061): Implemented 2486 logic cells
     Info (21064): Implemented 27 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1078 megabytes
-    Info: Processing ended: Sun Jan 13 17:20:39 2019
-    Info: Elapsed time: 00:00:56
-    Info: Total CPU time (on all processors): 00:00:58
+    Info: Peak virtual memory: 1084 megabytes
+    Info: Processing ended: Tue Jan 15 06:25:12 2019
+    Info: Elapsed time: 00:01:03
+    Info: Total CPU time (on all processors): 00:00:57
 
 

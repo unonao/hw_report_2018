@@ -55,7 +55,7 @@ BEGIN
             end loop;
 
             -- bubble sort
-            for flag in 0 to 4 loop
+            for flag in 0 to 1 loop
                 for i in (5-flag) downto 1 loop
                     if chains(i-1).peak < chains(i).peak then
                         -- xor swap
