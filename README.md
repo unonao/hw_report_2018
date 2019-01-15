@@ -85,15 +85,13 @@ top4(root, peak, len)
 4. 639, 41524, 131
 
 ### 最大動作周波数
-| Slow 1100mV 85C Model Fmax Summary              |
-|-----------|-----------------|------------|------|
+ Slow 1100mV 85C Model Fmax Summary              
 | Fmax      | Restricted Fmax | Clock Name | Note |
 |-----------|-----------------|------------|------|
 | 16.81 MHz | 16.81 MHz       | clk        |      |
 
 ### エレメント使用率
-| Flow Summary                                                                  |
-|---------------------------------|---------------------------------------------|
+Flow Summary                                                                  
 | Flow Status                     | Successful - Sun Jan 13 17:27:28 2019       |
 | Quartus Prime Version           | 18.0.0 Build 614 04/24/2018 SJ Lite Edition |
 | Revision Name                   | collatz                                     |
@@ -121,7 +119,8 @@ top4(root, peak, len)
 - 入力のラッチはデフォルトでオンになっており変更できない模様（1-port RAMでは変更できそう…？）
 
 ### デバッグについて
-バグはコンパイル時に出るエラーや、波形を見て想定と違う部分を見て見つけます。[https://www.dcode.fr/collatz-conjecture]などのサイトでcollatz数を計算できるので役に立ちました。
+バグはコンパイル時に出るエラーや、波形を見て想定と違う部分を見て見つけます。[https://www.dcode.fr/collatz-conjecture]
+などのサイトでcollatz数を計算できるので役に立ちました。
 
 やってみた感じだと、デバッグは主に3段階くらい。
 1. エディタの静的解析による構文チェック(if文やprocess文をちゃんと閉じているか？など)
