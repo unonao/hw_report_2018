@@ -3,7 +3,7 @@
 ## 問題
 > 10ビットの正数 : 変域 1~1023 について,
 > 偶数なら2で割る
-> 奇数なら3倍して+1する
+> 奇数なら3倍して|1する
 > を繰り返していると, 数字が大小を繰り返しそのうち1になります.
 > これを Collatz 山脈と呼ぶことにします.
 > Collats 山脈の最高峰を与える登り口のうち
@@ -14,7 +14,7 @@
 
 ## 環境
 - macbook pro
-- Virtual box + Vagrant + Ubuntu 16.04
+- Virtual box | Vagrant | Ubuntu 16.04
 - Quartus Prime 18.0 Lite Edition
 
 ### 環境構築時の注意
@@ -85,38 +85,34 @@ top4(root, peak, len)
 4. 639, 41524, 131
 
 ### 最大動作周波数
-+-------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary              ;
-+-----------+-----------------+------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
-+-----------+-----------------+------------+------+
-; 16.81 MHz ; 16.81 MHz       ; clk        ;      ;
-+-----------+-----------------+------------+------+
+| Slow 1100mV 85C Model Fmax Summary              |
+|-----------|-----------------|------------|------|
+| Fmax      | Restricted Fmax | Clock Name | Note |
+|-----------|-----------------|------------|------|
+| 16.81 MHz | 16.81 MHz       | clk        |      |
 
 ### エレメント使用率
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Jan 13 17:27:28 2019       ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
-; Revision Name                   ; collatz                                     ;
-; Top-level Entity Name           ; collatz                                     ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CGXFC7C7F23C8                              ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,628 / 56,480 ( 3 % )                      ;
-; Total registers                 ; 845                                         ;
-; Total pins                      ; 177 / 268 ( 66 % )                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 13,824 / 7,024,640 ( < 1 % )                ;
-; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
-; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
-; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
-; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
+| Flow Summary                                                                  |
+|---------------------------------|---------------------------------------------|
+| Flow Status                     | Successful - Sun Jan 13 17:27:28 2019       |
+| Quartus Prime Version           | 18.0.0 Build 614 04/24/2018 SJ Lite Edition |
+| Revision Name                   | collatz                                     |
+| Top-level Entity Name           | collatz                                     |
+| Family                          | Cyclone V                                   |
+| Device                          | 5CGXFC7C7F23C8                              |
+| Timing Models                   | Final                                       |
+| Logic utilization (in ALMs)     | 1,628 / 56,480 ( 3 % )                      |
+| Total registers                 | 845                                         |
+| Total pins                      | 177 / 268 ( 66 % )                          |
+| Total virtual pins              | 0                                           |
+| Total block memory bits         | 13,824 / 7,024,640 ( < 1 % )                |
+| Total DSP Blocks                | 0 / 156 ( 0 % )                             |
+| Total HSSI RX PCSs              | 0 / 6 ( 0 % )                               |
+| Total HSSI PMA RX Deserializers | 0 / 6 ( 0 % )                               |
+| Total HSSI TX PCSs              | 0 / 6 ( 0 % )                               |
+| Total HSSI PMA TX Serializers   | 0 / 6 ( 0 % )                               |
+| Total PLLs                      | 0 / 13 ( 0 % )                              |
+| Total DLLs                      | 0 / 4 ( 0 % )                               |
 
 
 ## その他
