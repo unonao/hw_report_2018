@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Jan 15 06:30:42 2019
+Fitter Status : Successful - Tue Jan 15 09:35:50 2019
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : collatz
 Top-level Entity Name : collatz
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 1,276 / 56,480 ( 2 % )
-Total registers : 852
+Logic utilization (in ALMs) : 1,052 / 56,480 ( 2 % )
+Total registers : 891
 Total pins : 177 / 268 ( 66 % )
 Total virtual pins : 0
 Total block memory bits : 13,824 / 7,024,640 ( < 1 % )

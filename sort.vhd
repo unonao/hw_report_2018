@@ -30,7 +30,6 @@ BEGIN
     process(clk)
 
         variable chains : chains6_t := (others => ((others => '0'), (others => '0'), (others => '0')));
-
     begin
         if rising_edge(clk) then
             for i in 0 to 3 loop
@@ -54,25 +53,54 @@ BEGIN
                 end loop;
             end loop;
 
-            -- bubble sort
-            for flag in 0 to 1 loop
-                for i in (5-flag) downto 1 loop
-                    if chains(i-1).peak < chains(i).peak then
-                        -- xor swap
-                        chains(i).root   := chains(i-1).root xor chains(i).root;
-                        chains(i-1).root := chains(i-1).root xor chains(i).root;
-                        chains(i).root   := chains(i-1).root xor chains(i).root;
 
-                        chains(i).peak   := chains(i-1).peak xor chains(i).peak;
-                        chains(i-1).peak := chains(i-1).peak xor chains(i).peak;
-                        chains(i).peak   := chains(i-1).peak xor chains(i).peak;
-
-                        chains(i).len   := chains(i-1).len xor chains(i).len;
-                        chains(i-1).len := chains(i-1).len xor chains(i).len;
-                        chains(i).len   := chains(i-1).len xor chains(i).len;
+            if chains(4).peak > chains(1).peak then
+                if chains(4).peak > chains(0).peak then
+                    -- 0番目
+                    chains(1 to 3) := chains(0 to 2);
+                    chains(0) := chains(4);
+                else
+                    -- 1番目
+                    chains(2 to 3) := chains(1 to 2);
+                    chains(1) := chains(4);
+                end if;
+            else
+                if chains(4).peak > chains(2).peak then
+                    -- 2番目
+                    chains(3) := chains(2);
+                    chains(2) := chains(4);
+                else
+                    if chains(4).peak > chains(3).peak then
+                        -- 3番目
+                        chains(3) := chains(4);
                     end if;
-                end loop;
-            end loop;
+                end if;
+            end if;
+
+
+            if chains(5).peak > chains(1).peak then
+                if chains(5).peak > chains(0).peak then
+                    -- 0番目
+                    chains(1 to 3) := chains(0 to 2);
+                    chains(0) := chains(5);
+                else
+                    -- 1番目
+                    chains(2 to 3) := chains(1 to 2);
+                    chains(1) := chains(5);
+                end if;
+            else
+                if chains(5).peak > chains(2).peak then
+                    -- 2番目
+                    chains(3) := chains(2);
+                    chains(2) := chains(5);
+                else
+                    if chains(5).peak > chains(3).peak then
+                        -- 3番目
+                        chains(3) := chains(5);
+                    end if;
+                end if;
+            end if;
+
 
             for i in 0 to 3 loop
                 top4_reg(i) <= chains(i);

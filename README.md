@@ -58,7 +58,7 @@ Quartusを入れましたが、Modelsim実行時にvlibが見つからないと�
 - count_clk.vhd :
   all_doneフラグが立って終了するまで、クロック数をカウントします。
 - sorter.vhd :
-  climbの結果を受け取って、最高峰の値を使ってソートし、top4を保持しておきます。
+  climbの結果を受け取って、最高峰の値を使ってソートし、top4を保持しておきます。bubbleソートなどを無理に使おうとすると、最大動作周波数が下がってしまったので変更しました。
 - ram_wrap.vhd :
   Quartus生成の2-port RAMを制御します。
 - ram_2_port.vhd :
@@ -89,21 +89,21 @@ top4(root, peak, len)
 
 | Fmax      | Restricted Fmax | Clock Name | Note |
 |-----------|-----------------|------------|------|
-| 25.81 MHz |  25.81 MHz        | clk        |      |
+| 48.4 MHz  |  48.4 MHz        | clk        |      |
 
 ### エレメント使用率
 
 |Flow Summary                     |                                             |
 |---------------------------------|---------------------------------------------|
-| Flow Status                     | Successful - Tue Jan 15 06:31:52 2019       |
+| Flow Status                     | Successful - Tue Jan 15 09:36:47 2019       |
 | Quartus Prime Version           | 18.0.0 Build 614 04/24/2018 SJ Lite Edition |
 | Revision Name                   | collatz                                     |
 | Top-level Entity Name           | collatz                                     |
 | Family                          | Cyclone V                                   |
 | Device                          | 5CGXFC7C7F23C8                              |
 | Timing Models                   | Final                                       |
-| Logic utilization (in ALMs)     | 1,276 / 56,480 ( 2 % )                      |
-| Total registers                 | 852                                         |
+| Logic utilization (in ALMs)     | 1,052 / 56,480 ( 2 % )                      |
+| Total registers                 | 891                                         |
 | Total pins                      | 177 / 268 ( 66 % )                          |
 | Total virtual pins              | 0                                           |
 | Total block memory bits         | 13,824 / 7,024,640 ( < 1 % )                |
