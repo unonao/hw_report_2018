@@ -85,13 +85,16 @@ top4(root, peak, len)
 4. 639, 41524, 131
 
 ### 最大動作周波数
- Slow 1100mV 85C Model Fmax Summary              
+ Slow 1100mV 85C Model Fmax Summary
+
 | Fmax      | Restricted Fmax | Clock Name | Note |
 |-----------|-----------------|------------|------|
 | 16.81 MHz | 16.81 MHz       | clk        |      |
 
 ### エレメント使用率
-Flow Summary                                                                  
+
+|Flow Summary                     |                                             |
+|---------------------------------|---------------------------------------------|
 | Flow Status                     | Successful - Sun Jan 13 17:27:28 2019       |
 | Quartus Prime Version           | 18.0.0 Build 614 04/24/2018 SJ Lite Edition |
 | Revision Name                   | collatz                                     |
